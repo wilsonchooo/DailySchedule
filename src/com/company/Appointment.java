@@ -1,25 +1,24 @@
 package com.company;
 
 public class Appointment {
+    public TimeInterval interval1;
+
+    public Appointment(int interval2){
+        interval1 = new TimeInterval(interval2) ;
+    }
+
+    public TimeInterval getTime(){
+        return interval1;
+    }
 
     public boolean conflictsWith(Appointment other)
     {
-        return getTime().overlapsWith(other.getTime());
+
+        if(this.interval1.overlapsWith(other.getTime()))
+        {
+            return true;
+        }
+        return false;
     }
 
-    public void clearConflicts(Appointment appt)
-    {
-        int i = 0;
-        while (i < apptList.size())
-        {
-            if (appt.conflictsWith((Appointment)(apptList.get(i))))
-            {
-                apptList.remove(i);
-            }
-            else
-            {
-                i++;
-            }
-        }
-    }
 }
