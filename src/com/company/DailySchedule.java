@@ -1,12 +1,11 @@
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class DailySchedule {
     private ArrayList<Appointment> apptList;
 
-    public DailySchedule(int[] APPOINTMENTS)
+    public DailySchedule(int[] appt)
     {
         apptList = new ArrayList();
     }

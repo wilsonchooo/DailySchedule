@@ -10,27 +10,32 @@ public class Main {
 
         System.out.println(Arrays.toString(appt));
 
-        DailySchedule mySchedule = new DailySchedule(appt);
+        DailySchedule schedule = new DailySchedule(appt);
 
 
         System.out.println("What time would you like to add? ");
         Scanner scanner = new Scanner(System.in);
         int time = scanner.nextInt();
         System.out.println("Is it an emergency?");
+        scanner = new Scanner(System.in);
+
         String emergency = scanner.nextLine();
+
         if (emergency.equals("yes") || emergency.equals("y"))
         {
-            mySchedule.addAppt(new Appointment(time), true);
+            schedule.addAppt(new Appointment(time), true);
+            System.out.println("Emergency Appointment at " + time +" added");
         }
         else
         {
-            mySchedule.addAppt(new Appointment(time), true);
+            schedule.addAppt(new Appointment(time), false);
+            System.out.println(" Appointment at " + time +" added");
+
         }
 
 
 
 
 
-        mySchedule.addAppt(new Appointment(time), false);
     }
 }
